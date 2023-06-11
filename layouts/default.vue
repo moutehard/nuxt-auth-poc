@@ -1,11 +1,6 @@
 <template>
   <div>
-    <ClientOnly>
-      <NavBar />
-      <template #fallback>
-        <p>loading</p>
-      </template>
-    </ClientOnly>
+    <NavBar />
     <div class="container mx-auto py-4 px-12">
       <slot />
     </div>
