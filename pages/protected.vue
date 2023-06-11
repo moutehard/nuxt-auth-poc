@@ -27,6 +27,7 @@
 </style>
 
 <script setup>
+  // this component requires auth so it should be rendered on the client side
   import { useAuth0 } from '@auth0/auth0-vue';
 
   const { user, getAccessTokenSilently, isAuthenticated } = useAuth0();

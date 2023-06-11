@@ -20,6 +20,10 @@
   </div>
 </template>
 
+<script setup>
+  // page doesn't require any auth so it can be rendered server side with no problems
+</script>
+
 <style scoped>
   h2 {
     margin-bottom: 20px;

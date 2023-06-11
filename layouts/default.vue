@@ -18,6 +18,8 @@
 </template>
 
 <script setup>
+  // if we have to render a component on the server that requires Auth0 (which is only client side),
+  // we must protect against undefined errors
   import { useAuth0 } from '@auth0/auth0-vue';
 
   const auth0 = useAuth0();
@@ -39,7 +41,7 @@
 
   const logOut = () => {
     navigateTo('/');
-    auth0.logout({ logoutParams: { returnTo: window.location.origin } });
+    auth0?.logout({ logoutParams: { returnTo: window.location.origin } });
   };
 </script>
 
