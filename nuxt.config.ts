@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   routeRules: {
     '/': { ssr: true },
     '/profile': { ssr: false },
+    '/products': { ssr: true },
   },
   appConfig: {
     auth: {
