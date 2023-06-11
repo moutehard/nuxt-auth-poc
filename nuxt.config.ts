@@ -2,12 +2,11 @@
 export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
   devtools: { enabled: true },
+  telemetry: false,
   routeRules: {
     '/': { ssr: true },
     '/protected': { ssr: false },
-    '/products': { ssr: true },
   },
-  telemetry: false,
   appConfig: {
     auth: {
       domain: process.env.AUTH0_DOMAIN,

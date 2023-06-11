@@ -1,20 +1,17 @@
 <template>
   <div>
     <header class="shadow-sm bg-white">
-      <nav class="container mx-auto p-4 flex justify-between">
+      <nav class="container mx-auto py-4 px-12 flex justify-between">
         <NuxtLink to="/" class="font-bold">Kick &#10084;&#65039; Okta</NuxtLink>
-        <ul class="flex gap-4">
-          <li><NuxtLink to="/">Home</NuxtLink></li>
-          <!-- <li><NuxtLink to="/protected">Protected Route</NuxtLink></li> -->
-          <!-- <li><NuxtLink to="/products">Merch</NuxtLink></li> -->
-          <li>
-            <NuxtLink v-if="!isAuthenticated" @click="login" class="btn"> Login </NuxtLink>
-            <NuxtLink v-else @click="logOut" class="btn">Logout</NuxtLink>
-          </li>
-        </ul>
+        <div class="flex gap-4">
+          <NuxtLink to="/">Home</NuxtLink>
+          <NuxtLink to="/protected">Protected Route</NuxtLink>
+          <NuxtLink v-if="!isAuthenticated" @click="login" class="btn">Login</NuxtLink>
+          <NuxtLink v-else @click="logOut" class="btn">Logout</NuxtLink>
+        </div>
       </nav>
     </header>
-    <div class="container mx-auto p-4">
+    <div class="container mx-auto py-4 px-12">
       <slot />
     </div>
   </div>
@@ -23,7 +20,6 @@
 <script setup>
   import { useAuth0 } from '@auth0/auth0-vue';
 
-  // const auth0 = process.client ? useAuth0() : undefined;
   const auth0 = useAuth0();
 
   const isAuthenticated = computed(() => {
