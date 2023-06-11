@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   telemetry: false,
   routeRules: {
     '/': { ssr: true },
-    '/protected': { ssr: false },
+    '/profile': { ssr: false },
   },
   appConfig: {
     auth: {
